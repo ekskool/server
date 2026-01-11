@@ -1,1 +1,41 @@
-hi
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Dashboard - Tabler</title>
+    <script>
+      (function () {
+        const themeConfig = {
+          theme: 'light',
+          'theme-base': 'gray',
+          'theme-font': 'sans-serif',
+          'theme-primary': 'blue',
+          'theme-radius': '1',
+        }
+        if (typeof document === 'undefined' || typeof window === 'undefined') {
+          return
+        }
+        const root = document.documentElement
+        Object.entries(themeConfig).forEach(([key, defaultValue]) => {
+          const stored = window.localStorage.getItem(`tabler-${key}`)
+          if (stored && stored !== defaultValue) {
+            root.setAttribute(`data-bs-${key}`, stored)
+          } else {
+            root.removeAttribute(`data-bs-${key}`)
+          }
+        })
+      })()
+    </script>
+    <style>
+      @import url("https://rsms.me/inter/inter.css");
+      :root { --map-height: 18rem; }
+    </style>
+    <script type="module" crossorigin src="/assets/index-L7jtGFMh.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-7KFrMB7s.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
